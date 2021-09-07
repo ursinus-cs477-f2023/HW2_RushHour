@@ -133,7 +133,6 @@ class State:
         cmap = ListedColormap(colors)
         grid = self.get_state_grid()
         grid = np.array(grid)
-        plt.figure()
         plt.imshow(grid, interpolation='none', cmap=cmap)
 
     def solve(self):
