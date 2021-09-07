@@ -30,7 +30,7 @@ class State:
 
         Return
         ------
-        State: copy of this state
+        State: Deep copy of this state
         """
         s = State()
         s.N = self.N
@@ -89,6 +89,10 @@ class State:
     def __str__(self):
         """
         Get a string representing the state
+
+        Returns
+        -------
+        string: A string representation of this state
         """
         s = ""
         grid = self.get_state_grid()
@@ -100,7 +104,12 @@ class State:
     
     def get_state_hashable(self):
         """
-        Return a shorter string used to hash the state
+        Return a shorter string without line breaks that can be
+        used to hash the state
+
+        Returns
+        -------
+        string: A string representation of this state
         """
         s = ""
         grid = self.get_state_grid()
@@ -110,6 +119,10 @@ class State:
         return s
 
     def plot(self):
+        """
+        Create a new figure and plot the state of this puzzle,
+        coloring the cars by different colors
+        """
         import numpy as np
         import matplotlib.pyplot as plt
         from matplotlib import cm
